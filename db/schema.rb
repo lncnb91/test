@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130181236) do
+ActiveRecord::Schema.define(version: 20151214104336) do
+
+  create_table "article_tags", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "article_id", limit: 4
+    t.integer  "tag_id",     limit: 4
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "title",       limit: 255,   null: false
+    t.text     "content",     limit: 65535, null: false
+    t.integer  "category_id", limit: 4,     null: false
+    t.integer  "author_id",   limit: 4
+  end
+
+  create_table "articles_tags", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "article_id", limit: 4
+    t.integer  "tag_id",     limit: 4
+  end
+
+  create_table "authors", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.date     "birth_day"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "name",       limit: 255
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "name",       limit: 255
+  end
 
   create_table "words", force: :cascade do |t|
     t.string   "content",    limit: 255
