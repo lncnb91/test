@@ -11,10 +11,13 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'devise'
 
 group :development, :test do
-  gem 'mysql2' 
+  gem 'mysql2'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
+  gem "binding_of_caller"
+  gem "pry-rails"
+  gem "pry-byebug"
 end
 
 group :production do
