@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def start_page
-    binding.pry
+    @word = Word.new
   end
 end

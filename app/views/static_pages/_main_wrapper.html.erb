@@ -124,6 +124,9 @@
               <%= render "static_pages/centre_content/article" %>
               <%= render "static_pages/centre_content/article" %>
               <%= render "static_pages/centre_content/article" %>
+              <%= form_for @word, class: "form-horizontal", role:"form" do |f| %>
+                <%= f.text_area :content, placeholder: "abc", class: "ckeditor" %>
+              <% end %>
             </div><!-- End mid column -->
           </div>
         </section>
