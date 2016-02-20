@@ -12,18 +12,14 @@ gem 'devise'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'mysql2'
+gem 'unicorn'
 
 group :development, :test do
-  gem 'mysql2'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
   gem "binding_of_caller"
   gem "pry-rails"
   gem "pry-byebug"
-end
-
-group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
 end
